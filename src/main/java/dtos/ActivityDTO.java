@@ -27,7 +27,7 @@ public class ActivityDTO implements Serializable {
 
     public ActivityDTO(Activity activity) {
         this.id = activity.getId();
-        this.activityName = activity.getActivityDescription();
+        this.activityName = activity.getActivityName();
         this.activityDescription = activity.getActivityDescription();
         this.isOutDoors = activity.isOutDoors();
         this.cityName = activity.getCityName();
