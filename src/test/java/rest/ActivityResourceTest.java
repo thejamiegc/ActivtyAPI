@@ -91,7 +91,7 @@ class ActivityResourceTest {
                 .get("/activity/copenhagen").then()
                 .assertThat()
                 .statusCode(HttpStatus.OK_200.getStatusCode())
-                .body("cityName.get(0)", equalTo("copenhagen"));
+                .body("activityDTOList.cityName.get(0)", equalTo("copenhagen"));
     }
 
     @Test

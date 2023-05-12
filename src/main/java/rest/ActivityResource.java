@@ -3,6 +3,7 @@ package rest;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import dtos.ActivityDTO;
+import dtos.ApiDTO;
 import facades.ActivityFacade;
 import facades.FacadeExample;
 import utils.EMF_Creator;
@@ -31,11 +32,13 @@ public class ActivityResource {
 
         List<ActivityDTO> activityDTOList = FACADE.getAllActivitiesByCityName(cityname);
         System.out.println(activityDTOList);
+        ApiDTO apiDTO = new ApiDTO(activityDTOList);
         if(activityDTOList.size()!=0) {
-            return Response.ok().entity(activityDTOList).build();
+            return Response.ok().entity(apiDTO).build();
         }else {
             return Response.status(204).build();
         }
     }
+
 
 }
